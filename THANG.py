@@ -64,9 +64,11 @@ class proj2:
         stat,p = stats.shapiro(self.data)
         print('stat-%.3f, p-%.3f' % (stat,p))
         if p> 0.05:
-            print('Không thể bác bỏ H0: Phân phối dữ liệu là chuẩn')
+            print('Chưa có bằng chứng thống kê để bác bỏ giả thuyết H0. Điều này ngụ ý: Dữ liệu tuân theo phân phối chuẩn')
         else:
-            print('Dữ liệu không tuân theo luật phân phối chuẩn')
+            print('Có bằng chứng thống kê để bác bỏ giả thuyết H0. Điều này ngụ ý: Dữ liệu không tuân theo luật phân phối chuẩn')
+            print('-'*10)
+            print('Do đó không thể chạy kiểm định ANOVA 1 chiều.')
         print('-'*50)    
             
     def kstest(self):
@@ -74,9 +76,11 @@ class proj2:
         stat, p = kstest(self.data,'norm')
         print('stat-%.3f, p-%.3f' % (stat,p))
         if p>0.05:
-            print('Không đủ bằng chứng để bác bỏ: Đây là dữ liệu phân phối chuẩn')
+            print('Chưa có bằng chứng thống kê để bác bỏ giả thuyết H0. Điều này ngụ ý: Dữ liệu tuân theo phân phối chuẩn')
         else:
-            print('Đấy không phải dữ liệu phân phối chuẩn')
+            print('Có bằng chứng thống kê để bác bỏ giả thuyết H0. Điều này ngụ ý: Dữ liệu không tuân theo luật phân phối chuẩn')
+            print('-'*10)
+            print('Do đó không thể chạy kiểm định ANOVA 1 chiều.')
         print('-'*50)
      
 #     def standardize(self):
